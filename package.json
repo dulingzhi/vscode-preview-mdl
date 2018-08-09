@@ -2,7 +2,7 @@
   "name": "vscode-preview-mdl",
   "displayName": "Preview MDL file",
   "description": "Preview Warcraft III mdl.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "Jai",
   "license": "MIT",
   "repository": {
