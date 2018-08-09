@@ -6,7 +6,7 @@ import { Server } from "../src/server";
 suite("Server Tests", () => {
     test("start server", () => {
         Server.start(".", 8888, true);
-        assert.ok(browserSync.has("vscode-preview-server"));
+        assert.ok(browserSync.has("vscode-preview-mdl-8888"));
         Server.stop();
     });
 });

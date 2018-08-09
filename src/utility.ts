@@ -19,7 +19,7 @@ export class Utility {
         }
 
         if (proxy === "") {
-            return Uri.parse(`http://localhost:${port}/${relativePath}`);
+            return Uri.parse(`http://localhost:${port}/${relativePath.replace(/\\/g, "/")}`);
         }
 
         let uri = Uri.parse(`http://${proxy}`);
@@ -30,7 +30,7 @@ export class Utility {
     public static getUriOfHtml() {
         const fileName = window.activeTextEditor.document.fileName;
         const options = workspace.getConfiguration("previewServer");
-        const port = options.get("port") as number + 1;
+        const port = options.get("port") as number + 8;
         const proxy = options.get("proxy") as string;
         const space = this.checkSpace();
         let relativePath = workspace.asRelativePath(fileName);

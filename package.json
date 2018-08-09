@@ -1,16 +1,16 @@
 {
-  "name": "vscode-preview-server",
-  "displayName": "Preview on Web Server",
-  "description": "Preview Web Page on Web Server.",
-  "version": "1.1.0",
-  "publisher": "yuichinukiyama",
+  "name": "vscode-preview-mdl",
+  "displayName": "Preview MDL file",
+  "description": "Preview Warcraft III mdl.",
+  "version": "0.1.0",
+  "publisher": "Jai",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YuichiNukiyama/vscode-preview-server"
+    "url": "https://github.com/dulingzhi/vscode-preview-mdl"
   },
   "bugs": {
-    "url": "https://github.com/YuichiNukiyama/vscode-preview-server/issues"
+    "url": "https://github.com/dulingzhi/vscode-preview-mdl/issues"
   },
   "engines": {
     "vscode": "^1.17.0"
@@ -19,10 +19,11 @@
     "Other"
   ],
   "keywords": [
-    "HTML",
+    "MDL",
     "Preview",
     "VSCode",
-    "multi-root ready"
+    "multi-root ready",
+    "Warcraft III"
   ],
   "icon": "images/icon.png",
   "activationEvents": [
@@ -130,47 +131,25 @@
         "title": "%extension.ui.title%"
       }
     ],
-    "keybindings": [
-      {
-        "command": "extension.preview",
-        "key": "ctrl+shift+p"
-      },
-      {
-        "command": "extension.launch",
-        "key": "ctrl+shift+l"
-      },
-      {
-        "command": "extension.stop",
-        "key": "ctrl+shift+s"
-      },
-      {
-        "command": "extension.resume",
-        "key": "ctrl+shift+r"
-      },
-      {
-        "command": "extension.ui",
-        "key": "ctrl+shift+u"
-      }
-    ],
     "menus": {
       "explorer/context": [
         {
           "command": "extension.preview",
-          "when": "resourceLangId == html"
+          "when": "resourceExtname == .mdl"
         },
         {
           "command": "extension.launch",
-          "when": "resourceLangId == html"
+          "when": "resourceExtname == .mdl"
         }
       ],
       "editor/context": [
         {
           "command": "extension.preview",
-          "when": "resourceLangId == html"
+          "when": "resourceExtname == .mdl"
         },
         {
           "command": "extension.launch",
-          "when": "resourceLangId == html"
+          "when": "resourceExtname == .mdl"
         }
       ]
     }

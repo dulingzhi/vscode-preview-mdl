@@ -9,7 +9,7 @@ export class BrowserContentProvider implements vscode.TextDocumentContentProvide
     public provideTextDocumentContent() {
         const editor = vscode.window.activeTextEditor;
         const uri = Utility.getUriOfActiveEditor();
-        const htmlUri = Utility.getUriOfHtml();
+        const war3mdl2json = Utility.getUriOfHtml();
         const ext = path.extname(editor.document.fileName);
 
         if (ext != ".mdl" && ext != ".blp") {
@@ -20,7 +20,7 @@ export class BrowserContentProvider implements vscode.TextDocumentContentProvide
         }
 
         return `<style>iframe { background-color: white } </style>
-                <iframe src="${htmlUri}?${uri}" frameBorder="0" width="100%" height="1000px" />`;
+                <iframe src="${war3mdl2json}?${uri}" frameBorder="0" width="100%" height="1000px" />`;
     }
 
     get onDidChange(): vscode.Event<vscode.Uri> {

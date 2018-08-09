@@ -63,15 +63,17 @@ export function activate(context: vscode.ExtensionContext) {
 
     let disposable2: any = vscode.commands.registerCommand("extension.launch", () => {
         const uri = Utility.getUriOfActiveEditor();
+        const war3mdl2json = Utility.getUriOfHtml();
         const options = vscode.workspace.getConfiguration("previewServer");
         const browsers = options.get("browsers") as string[];
         const ignoreDefaultBrowser = options.get("ignoreDefaultBrowser") as boolean;
+        const targetUri = vscode.Uri.parse(war3mdl2json + "?" + uri)
 
         if (browsers === null && !ignoreDefaultBrowser) {
-            return vscode.commands.executeCommand("vscode.open", uri);
+            return vscode.commands.executeCommand("vscode.open", targetUri);
         } else if (browsers !== null  && !ignoreDefaultBrowser) {
             Utility.openBrowser(browsers);
-            return vscode.commands.executeCommand("vscode.open", uri);
+            return vscode.commands.executeCommand("vscode.open", targetUri);
         } else if (browsers !== null && ignoreDefaultBrowser) {
             return Utility.openBrowser(browsers);
         } else {
@@ -140,7 +142,7 @@ function startServer(context: vscode.ExtensionContext) {
     }
 
     Server.start(rootPath, port, isSync, proxy, ui);
-    Server.start(path.join(context.extensionPath, "/src/webapp/"), port + 1, isSync, proxy, ui);
+    Server.start(path.join(context.extensionPath, "/src/webapp/"), port + 8, isSync, proxy, ui);
 }
 
 function resumeServer(context: vscode.ExtensionContext) {
