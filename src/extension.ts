@@ -142,7 +142,7 @@ function startServer(context: vscode.ExtensionContext) {
     }
 
     Server.start(rootPath, port, isSync, proxy, ui);
-    Server.start(path.join(context.extensionPath, "/src/webapp/"), port + 8, isSync, proxy, ui);
+    Server.start(path.join(context.extensionPath, "html/"), port + 8, isSync, proxy, ui);
 }
 
 function resumeServer(context: vscode.ExtensionContext) {
